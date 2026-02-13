@@ -159,3 +159,46 @@
   animation: float-up 0.8s ease-out 0.4s forwards;
   opacity: 0;
 }
+
+/* Scrolling words animation */
+.scrolling-words-container {
+  display: flex;
+  align-items: center;
+}
+
+.scrolling-words-box {
+  height: 3rem;
+  margin: auto;
+  overflow: hidden;
+  width: 8rem;
+}
+@keyframes scrollUp {
+  0%, 20% {
+    transform: translateY(0);
+  }
+  25%, 45% {
+    transform: translateY(-3rem);
+  }
+  50%, 70% {
+    transform: translateY(-6rem);
+  }
+  75%, 95% {
+    transform: translateY(0);
+  }
+}
+
+.scrolling-words-list {
+  margin: 0;
+  padding: 0;
+  animation: scrollUp 6s infinite;
+  list-style: none;
+}
+
+.scrolling-words-list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 3rem;
+  list-style: none;
+  width: 8rem;
+}

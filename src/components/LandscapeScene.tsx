@@ -1,4 +1,8 @@
+import { useState, useEffect } from "react";
+
 const LandscapeScene = () => {
+  const words = ["healthcare", "technology", "helping people"];
+
   return (
     <div className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
       <svg
@@ -31,10 +35,10 @@ const LandscapeScene = () => {
           </radialGradient>
 
           {/* Sun reflection on water */}
-          <linearGradient id="sunReflection" x1="0" y1="0" x2="0" y2="1">
+          {/* <linearGradient id="sunReflection" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="hsl(40, 95%, 70%)" stopOpacity="0.6" />
             <stop offset="100%" stopColor="hsl(40, 95%, 65%)" stopOpacity="0" />
-          </linearGradient>
+          </linearGradient> */}
         </defs>
 
         {/* Sky */}
@@ -70,7 +74,7 @@ const LandscapeScene = () => {
         <rect x="0" y="460" width="1440" height="240" fill="url(#waterGrad)" />
 
         {/* Sun reflection on water */}
-        <ellipse cx="720" cy="480" rx="60" ry="200" fill="url(#sunReflection)" />
+        {/* <ellipse cx="720" cy="480" rx="60" ry="200" fill="url(#sunReflection)" /> */}
 
         {/* Water shimmer lines */}
         {[480, 510, 540, 570, 600, 630].map((y, i) => (
@@ -134,10 +138,21 @@ const LandscapeScene = () => {
       <div className="absolute inset-0 flex items-end justify-center pb-20">
         <div className="text-center">
           <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground animate-float-up tracking-tight">
-            Hello, I'm <span className="text-gradient-warm">Your Name</span>
+            Hi, I'm <span className="text-gradient-warm">Dhivya</span>
           </h1>
-          <p className="font-body text-lg md:text-xl text-muted-foreground mt-4 animate-float-up-delay-1">
-            Developer · Creator · Explorer
+          <p className="font-body text-lg md:text-xl text-muted-foreground mt-4 animate-float-up-delay-1 flex items-center justify-center">
+            <span>Passionate about</span>
+            <div className="scrolling-words-container ml-1">
+              <div className="scrolling-words-box">
+                <ul className="scrolling-words-list">
+                  {words.map((word, index) => (
+                    <li key={index} className="text-gradient-warm">
+                      {word}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </p>
         </div>
       </div>

@@ -29,7 +29,7 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-md border-b border-border/50">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="font-display text-lg font-semibold text-foreground">Portfolio</span>
+          <span className="font-display text-lg font-semibold text-foreground">Dhivya's Space</span>
           <div className="flex items-center gap-6">
             <a href="#projects" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
               Projects
@@ -38,7 +38,7 @@ const Index = () => {
               About
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/dhivya-is-coding/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -74,10 +74,10 @@ const Index = () => {
             About
           </h2>
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
-            I'm a developer who loves building things that live on the internet. I care deeply about clean code, thoughtful design, and creating experiences that feel effortless.
+            I am a computer scientist with a heart that beats for medtech. Starting out at USC as a biomedical engineer, I slid into computer science because I truly believe in the power of cutting-edge technology to revolutionize healthcare. I'm interested in devices and the algorithms that control them, techniques like CRISPR, and how we can leverage data to make leaps and bounds to what comes next in healthcare. I'm excited to be in an industry that I'm so passionate about, and would love to connect to talk about big ideas or opportunities!
           </p>
           <p className="text-muted-foreground font-body text-lg leading-relaxed">
-            When I'm not coding, you'll find me exploring the outdoors, reading, or tinkering with new technologies.
+            When I'm not coding, you'll find me reading, dancing, making art, exploring the outdoors, with my friends and loved ones right beside me.
           </p>
         </div>
       </section>
@@ -86,13 +86,13 @@ const Index = () => {
       <footer className="border-t border-border py-12">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground font-body text-sm">
-            © {new Date().getFullYear()} · Built with care
+            © {new Date().getFullYear()} · Built with joy
           </p>
           <div className="flex items-center gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://github.com/dhivya-is-coding/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Github className="w-4 h-4" />
             </a>
-            <a href="mailto:hello@example.com" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="mailto:dhivya.is.working@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
               <Mail className="w-4 h-4" />
             </a>
           </div>
