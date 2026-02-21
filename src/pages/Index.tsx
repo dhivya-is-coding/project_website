@@ -1,13 +1,16 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import LandscapeScene from "@/components/LandscapeScene";
+import PageLayout from "@/components/PageLayout";
 import ProjectCard from "@/components/ProjectCard";
-import { Github, Mail } from "lucide-react";
 
 const projects = [
   {
-    title: "Project Alpha",
-    description: "A full-stack application built with modern web technologies. Featuring real-time updates and a clean interface.",
-    tags: ["React", "TypeScript", "Node.js"],
-    link: "#",
+    title: "TrialTwin Lab",
+    description: "Digital twin engine for oncology clinical trials. Generates synthetic patients, trains survival models, and estimates individual treatment effects to improve trial efficiency.",
+    tags: ["Python", "Streamlit", "scikit-survival", "Plotly"],
+    link: "/projects/trialtwin-lab",
+    internal: true,
   },
   {
     title: "Data Visualizer",
@@ -24,31 +27,19 @@ const projects = [
 ];
 
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-md border-b border-border/50">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="font-display text-lg font-semibold text-foreground">Dhivya's Space</span>
-          <div className="flex items-center gap-6">
-            <a href="#projects" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Projects
-            </a>
-            <a href="#about" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About
-            </a>
-            <a
-              href="https://github.com/dhivya-is-coding/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </nav>
+  const { hash } = useLocation();
 
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+
+  return (
+    <PageLayout>
       {/* Hero */}
       <LandscapeScene />
 
@@ -81,24 +72,7 @@ const Index = () => {
           </p>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border py-12">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground font-body text-sm">
-            © {new Date().getFullYear()} · Built with joy
-          </p>
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/dhivya-is-coding/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Github className="w-4 h-4" />
-            </a>
-            <a href="mailto:dhivya.is.working@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Mail className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   );
 };
 

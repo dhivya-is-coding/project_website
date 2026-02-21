@@ -1,25 +1,28 @@
-import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ExternalLink, ArrowRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
   link?: string;
+  internal?: boolean;
 }
 
-const ProjectCard = ({ title, description, tags, link }: ProjectCardProps) => {
-  return (
-    <a
-      href={link || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block rounded-lg bg-card border border-border p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_-10px_hsl(32,90%,55%,0.2)]"
-    >
+const ProjectCard = ({ title, description, tags, link, internal }: ProjectCardProps) => {
+  const className = "group block rounded-lg bg-card border border-border p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_-10px_hsl(32,90%,55%,0.2)]";
+
+  const content = (
+    <>
       <div className="flex items-start justify-between">
         <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
           {title}
         </h3>
-        <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+        {internal ? (
+          <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+        ) : (
+          <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+        )}
       </div>
       <p className="mt-2 text-muted-foreground font-body text-sm leading-relaxed">
         {description}
@@ -34,6 +37,25 @@ const ProjectCard = ({ title, description, tags, link }: ProjectCardProps) => {
           </span>
         ))}
       </div>
+    </>
+  );
+
+  if (internal && link) {
+    return (
+      <Link to={link} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={link || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+    >
+      {content}
     </a>
   );
 };
