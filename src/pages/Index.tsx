@@ -12,18 +12,6 @@ const projects = [
     link: "/projects/trialtwin-lab",
     internal: true,
   },
-  {
-    title: "Data Visualizer",
-    description: "Interactive data visualization tool that transforms complex datasets into beautiful, understandable charts.",
-    tags: ["D3.js", "Python", "API"],
-    link: "#",
-  },
-  {
-    title: "CLI Toolkit",
-    description: "A collection of command-line tools to streamline development workflows and automate repetitive tasks.",
-    tags: ["Rust", "CLI", "Open Source"],
-    link: "#",
-  },
 ];
 
 const Index = () => {
