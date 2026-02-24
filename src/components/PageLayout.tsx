@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Github, Mail } from "lucide-react";
 
+const GITHUB_URL = "https://github.com/dhivya-is-coding/";
+
 interface PageLayoutProps {
   children: React.ReactNode;
 }
@@ -15,17 +17,17 @@ const PageLayout = ({ children }: PageLayoutProps) => {
             Dhivya's Space
           </Link>
           <div className="flex items-center gap-6">
-            <a href="/#projects" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/#projects" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
               Projects
-            </a>
-            <Link to="/blog/trialtwin-lab" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/blog" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
               Blog
             </Link>
-            <a href="/#about" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/#about" className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
               About
-            </a>
+            </Link>
             <a
-              href="https://github.com/dhivya-is-coding/"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -45,7 +47,7 @@ const PageLayout = ({ children }: PageLayoutProps) => {
             &copy; {new Date().getFullYear()} &middot; Built with joy
           </p>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/dhivya-is-coding/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Github className="w-4 h-4" />
             </a>
             <a href="mailto:dhivya.is.working@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
