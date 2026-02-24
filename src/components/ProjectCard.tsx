@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, BookOpen } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -7,9 +7,10 @@ interface ProjectCardProps {
   tags: string[];
   link?: string;
   internal?: boolean;
+  blogLink?: string;
 }
 
-const ProjectCard = ({ title, description, tags, link, internal }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, link, internal, blogLink }: ProjectCardProps) => {
   const className = "group block rounded-lg bg-card border border-border p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_-10px_hsl(32,90%,55%,0.2)]";
 
   const content = (
@@ -37,6 +38,19 @@ const ProjectCard = ({ title, description, tags, link, internal }: ProjectCardPr
           </span>
         ))}
       </div>
+      {blogLink && (
+        <div className="mt-4 pt-4 border-t border-border">
+          <Link 
+            to={blogLink}
+            className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-primary hover:text-primary/80 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            Read the technical deep dive
+            <ArrowRight className="w-3 h-3" />
+          </Link>
+        </div>
+      )}
     </>
   );
 
@@ -48,16 +62,20 @@ const ProjectCard = ({ title, description, tags, link, internal }: ProjectCardPr
     );
   }
 
-  return (
-    <a
-      href={link || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-    >
-      {content}
-    </a>
-  );
+  if (link) {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <div className={className}>{content}</div>;
 };
 
 export default ProjectCard;

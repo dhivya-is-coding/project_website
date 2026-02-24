@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, ExternalLink, Github } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -58,6 +58,26 @@ const ProjectDetail = () => {
 
         <Separator className="mb-12" />
 
+        {/* Blog CTA */}
+        <Link
+          to="/blog/trialtwin-lab"
+          className="group block rounded-lg border border-primary/30 bg-primary/5 p-6 mb-16 transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:shadow-[0_0_40px_-10px_hsl(32,90%,55%,0.25)]"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <BookOpen className="w-5 h-5 text-primary" />
+            <h2 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              Read the Technical Deep Dive
+            </h2>
+          </div>
+          <p className="font-body text-sm text-muted-foreground leading-relaxed mb-3">
+            A detailed walkthrough of the architecture, synthetic data pipeline, survival modeling, digital twin generation, and PROCOVA efficiency analysis.
+          </p>
+          <span className="inline-flex items-center gap-1.5 text-sm font-body font-medium text-primary">
+            Read the blog post
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </span>
+        </Link>
+
         {/* Description */}
         <div className="max-w-3xl space-y-6 mb-16">
           <h2 className="font-display text-2xl font-semibold text-foreground">
@@ -86,7 +106,7 @@ const ProjectDetail = () => {
         </div>
 
         {/* Key Features */}
-        <div className="mb-16">
+        <div>
           <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
             Key Features
           </h2>
@@ -104,25 +124,6 @@ const ProjectDetail = () => {
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
                   {feature.desc}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Screenshots */}
-        <div>
-          <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-            Screenshots
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {["Patient Explorer", "Trial Dashboard"].map((label) => (
-              <div
-                key={label}
-                className="rounded-lg bg-card border border-border aspect-video flex items-center justify-center"
-              >
-                <span className="text-muted-foreground font-body text-sm">
-                  {label} — screenshot coming soon
-                </span>
               </div>
             ))}
           </div>

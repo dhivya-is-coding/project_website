@@ -11,6 +11,7 @@ const projects = [
     tags: ["Python", "Streamlit", "scikit-survival", "Plotly"],
     link: "/projects/trialtwin-lab",
     internal: true,
+    blogLink: "/blog/trialtwin-lab",
   },
 ];
 
