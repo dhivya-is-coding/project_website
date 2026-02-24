@@ -2,18 +2,21 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Separator } from "@/components/ui/separator";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
+// Import blog content - each blog page imports its own markdown
+import blogContent from "../../trial_twin_blog.md?raw";
 
 const BlogPost = () => {
   return (
     <PageLayout>
-      <div className="max-w-3xl mx-auto px-6 pt-28 pb-24">
+      <div className="max-w-4xl mx-auto px-6 pt-28 pb-24">
         {/* Back link */}
         <Link
           to="/"
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10 font-body"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back
+          Back to Home
         </Link>
 
         {/* Article header */}
@@ -29,15 +32,8 @@ const BlogPost = () => {
         <Separator className="mb-10" />
 
         {/* Article content */}
-        <article className="prose prose-invert prose-orange max-w-none font-body
-          prose-headings:font-display prose-headings:text-foreground
-          prose-p:text-muted-foreground prose-p:leading-relaxed
-          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-foreground
-          prose-li:text-muted-foreground
-          prose-blockquote:border-primary/40 prose-blockquote:text-muted-foreground
-        ">
-          <p>Blog post content coming soon.</p>
+        <article>
+          <MarkdownRenderer content={blogContent} />
         </article>
       </div>
     </PageLayout>
