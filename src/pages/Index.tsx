@@ -13,6 +13,14 @@ const projects = [
     internal: true,
     blogLink: "/blog/trialtwin-lab",
   },
+  {
+    title: "Dental Vision",
+    description: "Binary classifier for dental panoramic X-rays using transfer learning. Compares CNN baseline, frozen ResNet50, and two-stage fine-tuned ResNet50 across Keras and PyTorch, deployed to AWS Lambda.",
+    tags: ["Python", "PyTorch", "Keras", "AWS Lambda"],
+    link: "/projects/dental-vision",
+    internal: true,
+    blogLink: "/blog/dental-vision",
+  },
 ];
 
 const Index = () => {

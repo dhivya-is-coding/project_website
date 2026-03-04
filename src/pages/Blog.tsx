@@ -10,6 +10,13 @@ const posts = [
     date: "February 2026",
     link: "/blog/trialtwin-lab",
   },
+  {
+    title: "Building a Dental X-ray Classifier",
+    description:
+      "Transfer learning on a tiny dataset — three models, two frameworks, an augmentation bug, and honest evaluation of what 517 images can teach a neural network.",
+    date: "March 2026",
+    link: "/blog/dental-vision",
+  },
 ];
 
 const Blog = () => {

@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import DentalVisionProjectDetail from "./pages/DentalVisionProjectDetail";
+import DentalVisionBlogPost from "./pages/DentalVisionBlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/projects/trialtwin-lab" element={<ProjectDetail />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/trialtwin-lab" element={<BlogPost />} />
+          <Route path="/projects/dental-vision" element={<DentalVisionProjectDetail />} />
+          <Route path="/blog/dental-vision" element={<DentalVisionBlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
