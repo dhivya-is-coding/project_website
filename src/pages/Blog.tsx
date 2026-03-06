@@ -17,6 +17,13 @@ const posts = [
     date: "March 2026",
     link: "/blog/dental-vision",
   },
+  {
+    title: "Fine-Tuning BioBERT for Clinical NER",
+    description:
+      "Fine-tuning BioBERT on BC5CDR for Disease and Chemical entity recognition, with subword alignment, entity-level evaluation, and domain transfer analysis on synthetic prior authorization notes.",
+    date: "March 2026",
+    link: "/blog/clinical-ner",
+  },
 ];
 
 const Blog = () => {

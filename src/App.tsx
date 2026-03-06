@@ -9,6 +9,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import DentalVisionProjectDetail from "./pages/DentalVisionProjectDetail";
 import DentalVisionBlogPost from "./pages/DentalVisionBlogPost";
+import ClinicalNerProjectDetail from "./pages/ClinicalNerProjectDetail";
+import ClinicalNerBlogPost from "./pages/ClinicalNerBlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/blog/trialtwin-lab" element={<BlogPost />} />
           <Route path="/projects/dental-vision" element={<DentalVisionProjectDetail />} />
           <Route path="/blog/dental-vision" element={<DentalVisionBlogPost />} />
+          <Route path="/projects/clinical-ner" element={<ClinicalNerProjectDetail />} />
+          <Route path="/blog/clinical-ner" element={<ClinicalNerBlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

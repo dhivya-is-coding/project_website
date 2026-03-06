@@ -21,6 +21,14 @@ const projects = [
     internal: true,
     blogLink: "/blog/dental-vision",
   },
+  {
+    title: "Clinical NER",
+    description: "Fine-tuned BioBERT for Disease and Chemical entity recognition on BC5CDR. Includes subword label alignment, entity-level evaluation, and domain transfer analysis on prior authorization notes.",
+    tags: ["Python", "PyTorch", "HuggingFace", "BioBERT"],
+    link: "/projects/clinical-ner",
+    internal: true,
+    blogLink: "/blog/clinical-ner",
+  },
 ];
 
 const Index = () => {
